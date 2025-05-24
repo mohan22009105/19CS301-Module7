@@ -1,34 +1,39 @@
 # 19CS301-Module7
 EX: 7.1 RECURSION
-### Aim: To Write a Python Program to find the sum of all digits in a number using recursion
+### Aim: 
+To Write a Python program to find the sum of square of a first n Natural Numbers using recursion
+
 ### Algorithm:
 STEP 1: Start.
 
 STEP 2: Define a function.
 
-STEP 3: Create a base case for termination of the function. STEP 4: Create a recursive case to calculate the result.
+STEP 3: return for termination of the function. 
+
+STEP 4: Create a recursive case to calculate the result.
 
 STEP 5: Print the result. STEP 6: Stop.
 
 ### Program:
 ```
-def sum_digit(n):
-       if n<=0:
-            return 0
-       else:
-            return n%10+sum_digit(n//10)
+def sum_of_numbers(n):
+    if(n<=0):
+        return 0
+    return(n**2 + sum_of_numbers(n-1))
 n = int(input())
-sum = sum_digit(n)
-print(sum)
+print('Result is',sum_of_numbers(n))
 ```
 ### Output:
-![image](https://github.com/user-attachments/assets/50acc657-266e-46e6-ab17-10358494e26c)
+![image](https://github.com/23013357/19CS301-Module7/blob/main/vv.png)
 
 ### Result: Thus, the given program is implemented and executed successfully .
  
 
 EX: 7.2 TYPES OF RECURSIONS
-### Aim: To Write a Python Program to find the sum of all digits in a number using recursion
+### Aim:
+To Write aPython program to display Arithmetic Progression  series by reading the difference between the numbers and limit  using  head recursion.
+
+
 ### Algorithm:
 STEP 1: Start.
 
@@ -41,19 +46,18 @@ STEP 4: Print the result.
 STEP 5: Stop.
 ### Program:
 ```
-def fun(n):
-     if (n >0):
-          fun(n - 2)
-      print(n-1, end=" ")
-x = int(input())
-if(x%2==0):
-     fun(x)
-else:
-     fun(x+1)
+def fun(n,d):
+    if (n > 0):
+        fun(n-d,d)
+        print(n, end=" ")
+ 
+d= int(input())
+n = int(input())
+fun(n,d)
 
 ```
 ### Output:
-![image](https://github.com/user-attachments/assets/c4d6416f-d333-49c1-9dd5-0f774cdabb03)
+![image](https://github.com/23013357/19CS301-Module7/blob/main/bb.png)
 
 ###Result: Thus, the given program is implemented and executed successfully.
  
@@ -61,7 +65,8 @@ else:
 
 EX: 7.3 TAYLOR SERIES
 
-###Aim: To python program to evaluate the series using recursion by collecting the x and n values from the user.
+### Aim: 
+To python program to evaluate the series using recursion by collecting the x and n values from the user.
 ### ALGORITHM:
 STEP 1: Start.
 
@@ -94,7 +99,8 @@ print(series(x,n))
 
 EX: 7.4 Solve by recursion relation
 
-### Aim: To Write a Python Program to find whether a string is a palindrome or not using recursion
+### Aim: 
+To Write a Python Program to find whether a string is a palindrome or not using recursion
 
 ### Algorithm:
 STEP 1: Start.
@@ -129,6 +135,46 @@ else:
 ```
 ### Output:
 ![image](https://github.com/user-attachments/assets/d30ef836-1901-448a-a146-dc905fdc3198)
+
+### Result: Thus, the given program is implemented and executed successfully .
+
+
+ EX: 7.5   Tail recursion
+
+### Aim: 
+To Write a Python Program to convert a decimal number to a binary number using tail recursion.
+
+
+### Algorithm:
+
+Start
+
+Input: Take a decimal number n as input.
+
+Base Case: If n == 0, return 0 (base case of the recursion).
+
+Recursive Step: If n != 0, calculate the binary digit as n % 2 (remainder when divided by 2).
+
+Recursion: Call the decimal_binary() function recursively with n // 2 (integer division by 2).
+
+Combine Result: Append the binary digit to the result of the recursive call using 10 * result (shifting the binary digits left).
+
+Output: Return the final binary representation of the number.
+
+End
+
+### Program:
+```
+def decimal_binary(n):
+    if n==0:
+        return 0
+    else:
+        return (n% 2)+10*decimal_binary(int(n/2))
+n=int(input())
+print(decimal_binary(n))
+```
+### Output:
+![image](https://github.com/23013357/19CS301-Module7/blob/main/MODUL%207.png)
 
 ### Result: Thus, the given program is implemented and executed successfully .
  
